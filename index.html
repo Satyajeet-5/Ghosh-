@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disable Back Navigation</title>
+    <title>Back Navigation Detection</title>
     <script>
-        function disableBack() {
-            // Push a new state to the history
-            history.pushState(null, null, window.location.href);
-
-            // Add an event listener to prevent the back button
-            window.addEventListener('popstate', function () {
-                history.pushState(null, null, window.location.href);
-            });
+        // Function to run when the back button is pressed
+        function onBackNavigation() {
+            alert("You navigated back to this page!");
+            // Additional actions can be performed here
         }
+
+        window.addEventListener("popstate", function (event) {
+            onBackNavigation();
+        });
+
+        // Add an entry to the history state to detect back
+        window.onload = function () {
+            history.pushState(null, null, window.location.href);
+        };
     </script>
 </head>
 <body>
-    <h1>Current Page</h1>
-    <button onclick="disableBack()">Press to Disable Back Button</button>
+    <h1>Page with Back Navigation Detection</h1>
+    <p>Try navigating to another page and then use the back button!</p>
 </body>
 </html>
