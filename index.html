@@ -12,7 +12,16 @@
 
     <script>
         function goToPage2() {
-            window.location.href = "page2.html"; // Navigates to Page 2
+            history.pushState(null, null, window.location.href);
+
+            // Redirect to the next page
+            window.location.href = "nextpage.html";
+
+            // Prevent back navigation after the new page is loaded
+            window.addEventListener("popstate", function () {
+                history.pushState(null, null, window.location.href);
+            });
+            //window.location.href = "page2.html"; // Navigates to Page 2
         }
     </script>
 </body>
