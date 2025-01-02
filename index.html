@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back Navigation Detection</title>
+    <title>Reload Page</title>
     <script>
-        // Function to run when the back button is pressed
-        function onBackNavigation() {
-            alert("You navigated back to this page!");
-            // Additional actions can be performed here
+        function reloadPage() {
+            location.reload(); // Reloads the current page
         }
-
-        window.addEventListener("popstate", function (event) {
-            onBackNavigation();
-        });
-
-        // Add an entry to the history state to detect back
-        window.onload = function () {
-            history.pushState(null, null, window.location.href);
-        };
     </script>
 </head>
 <body>
-    <h1>Page with Back Navigation Detection</h1>
-    <p>Try navigating to another page and then use the back button!</p>
+    <h1>Reload Page Example</h1>
+    <p>Press the button below to reload the page.</p>
+    <button onclick="reloadPage()">Reload Page</button>
 </body>
 </html>
