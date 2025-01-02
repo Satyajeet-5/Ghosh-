@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reload Page</title>
-    <script>
-        function reloadPage() {
-            location.reload(); // Reloads the current page
-        }
-    </script>
+    <title>Page 1</title>
 </head>
 <body>
-    <h1>Reload Page Example</h1>
-    <p>Press the button below to reload the page.</p>
-    <button onclick="reloadPage()">Reload Page</button>
+    <h1>Page 1</h1>
+    <p>Click the button below to navigate to Page 2.</p>
+    <button onclick="goToPage2()">Go to Page 2</button>
+
+    <script>
+        function goToPage2() {
+            window.location.href = "page2.html"; // Navigates to Page 2
+        }
+    </script>
 </body>
 </html>
