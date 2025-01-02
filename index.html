@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disable Back Navigation</title>
+    <script>
+        function disableBack() {
+            // Push a new state to the history
+            history.pushState(null, null, window.location.href);
+
+            // Add an event listener to prevent the back button
+            window.addEventListener('popstate', function () {
+                history.pushState(null, null, window.location.href);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Current Page</h1>
+    <button onclick="disableBack()">Press to Disable Back Button</button>
+</body>
+</html>
