@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+    <script>
+        // Prevent back navigation
+        window.onload = function () {
+            history.pushState(null, null, window.location.href);
+
+            window.addEventListener("popstate", function () {
+                history.pushState(null, null, window.location.href);
+            });
+        };
+    </script>
+</head>
+<body>
+    <h1>You are on the next page!</h1>
+    <p>Back navigation is disabled.</p>
+</body>
+</html>
